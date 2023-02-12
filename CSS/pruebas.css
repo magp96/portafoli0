@@ -1,0 +1,14 @@
+#delay1 {
+    position: relative;
+    transition-property: font-size;
+    transition-duration: 4s;
+    transition-delay: 2s;
+    font-size: 14px;
+  }
+  
+  #delay1:hover {
+    transition-property: font-size;
+    transition-duration: 4s;
+    transition-delay: 2s;
+    font-size: 36px;
+  }

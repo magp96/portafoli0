@@ -1,0 +1,179 @@
+/*
+    1. Posicionamiento --> static, absolute, relative, fixed
+    2. Modelo de caja (Box model) --> margin, border, padding, content
+    3. Tipografía --> tipos, tamaños de fuente, etc
+    4. Estilos visuales --> box-shadow, border-radius, gradient, etc
+    5. Otros --> reglas CSS y más
+*/
+:root{
+    --colorPricipal: rgb(3, 121, 56);
+    --colorBase: #eee;
+    --colorSecon: #c0780b;
+    --colorThird: rgba(4, 23, 230, 0.867);
+    --colortext: #050505;
+    --fondo: linear-gradient(18.8deg, var(--colorBase) 32.69%, var(--colorPricipal) 60%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Dm-Sans", sans-serif;
+}
+body{
+    background: var(--fondo);
+}
+
+header{
+    position: static;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width:320px;
+    margin-bottom: 20px;
+}
+.navbar {
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border-bottom: solid 1px var(--colorSecon);
+    padding: 8px;
+}
+
+.list-navbar{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    align-content: center;
+}
+.list-navbar li{
+    margin: 0 8px;
+    align-content: center;
+}
+.list-navbar li a{
+    font-size: 1.5rem;
+    color: var(--colorBase);
+    text-decoration: none;
+    align-content: center;
+}
+
+.list-navbar li a:hover{
+    color: var(--colorSecon);
+}
+
+.principal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.spiner-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.principal-spiner {
+    z-index: -1;
+    position: absolute;
+    width: 210px;
+    height: 200px;
+    background-color: var(--colorSecon); 
+    animation: rotar 10s infinite;
+}
+
+@keyframes rotar{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.container-img {
+    position: absolute;
+    width: 210px;
+    height: 200px;
+
+}
+.container-img picture img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.principal-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 200px;
+    background: transparent;
+    align-items: center;
+    text-align: center;
+    color:var(--colortext);
+    font-size: 2.4rem;
+    position: relative;
+    margin-top: 300px;
+}
+
+.button-principal{
+    border:none;
+    margin-top: 8px;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient( var(--colorThird) 80%, #909090);
+    cursor: pointer;
+    font-size: bold;
+}
+
+.button-principal:hover{
+    box-shadow: 0 0 2px 2px var(--colorThird);
+}
+
+
+/*---- footer ----*/
+
+footer {
+    position: fixed;
+    width: 100%;
+    height:2rem;
+    display:flex;
+    justify-content: center;
+    bottom: 0;
+    background-color: var(--colorSecon);
+    align-items: center;
+}
+footer ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+footer li{
+    margin-right: 2rem;
+    list-style: none;
+    width:1.6rem;
+    height:1.6rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor:pointer;
+}
+
+.icon-whats{
+    background-image: url('/icons/icons-general/whats.png');
+}
+.icon-face{
+    background-image: url('/icons/icons-general/icono-face.png');
+}
+.icon-lkd{
+    background-image: url('/icons/icons-general/icono-lkd.png');
+}
+
+@media (max-width: 600px){
+    footer{
+        display: none;
+    }
+}

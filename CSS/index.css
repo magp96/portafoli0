@@ -6,12 +6,12 @@
     5. Otros --> reglas CSS y más
 */
 :root{
-    --colorPricipal: rgb(3, 121, 56);
+    --colorPricipal: rgb(85, 91, 117);
     --colorBase: #eee;
     --colorSecon: #c0780b;
     --colorThird: rgba(4, 23, 230, 0.867);
     --colortext: #050505;
-    --fondo: linear-gradient(18.8deg, var(--colorBase) 32.69%, var(--colorPricipal) 60%);
+    --fondo: var(--colorPricipal);
 }
 *{
     box-sizing: border-box;
@@ -23,12 +23,14 @@ html {
     font-family: "Dm-Sans", sans-serif;
 }
 body{
-    background: var(--fondo);
+    background-image: url("http://abeecms-prod.beeapi.net/131/92ea8158-b14c-4a25-929d-6afbd6984d3d");
+    background-size: cover;
+    background-repeat: none;
 }
 
 header{
-    position: static;
     display: flex;
+    z-index: 1;
     justify-content: center;
     width: 100%;
     min-width:320px;
@@ -57,7 +59,7 @@ header{
 }
 .list-navbar li a{
     font-size: 1.5rem;
-    color: var(--colorBase);
+    color: var(--colortext);
     text-decoration: none;
     align-content: center;
 }
@@ -72,37 +74,18 @@ header{
     display: flex;
     justify-content: center;
 }
-.spiner-container {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-.principal-spiner {
-    z-index: -1;
-    position: absolute;
-    width: 210px;
-    height: 200px;
-    background-color: var(--colorSecon); 
-    animation: rotar 10s infinite;
-}
-
-@keyframes rotar{
-    100%{
-        transform: rotate(360deg);
-    }
-}
 
 .container-img {
     position: absolute;
-    width: 210px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
 
 }
 .container-img picture img {
     width:100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
 }
 .principal-info-container{
     display: flex;
